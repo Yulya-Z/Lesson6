@@ -10,7 +10,8 @@ class WordsFinder:
                 all_words[name] = []
                 for line in file:
                     line = line.lower()
-                    re.split(r"[,.=!?;:-]+", line)
+                    re.split(r"[,.=!?;:-]:\W", line)
+                    line.split()
                     all_words[name].append(line)
 
         return all_words
